@@ -5,19 +5,25 @@
             <th> Bandera </th>
             <th> Nombre </th>
             <th> Poblacion </th>
+            <!-- <th> Capital</th>
+            <th> Subregión </th> 
+            <th> Area km² </th>             -->
             <th> </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pais of paises; let i = index">
+        <tr *ngFor="let pais of paises; let i = index" class="animate__animated animate__fadeIn animate__faster">
             <td>{{i+1}}</td>
             <td>
                 <img class="small-flang" [src]="pais.flag">
             </td>
-            <td>{{pais.name}}</td>
+            <td>{{pais.capital}},{{pais.name}}</td>
             <td>{{pais.population | number}}</td>
+            <!-- <td>{{pais.capital}}</td> -->
+            <!-- <td>{{pais.subregion }}</td>   -->
+            <!-- <td>{{pais.area | number }}</td>           -->
             <td>
-                <a [routerLink]="['/pais',pais.alpha2Code]"  >Ver...</a>
+                <a [routerLink]="['/pais',pais.alpha2Code]">Ver...</a>
             </td>
         </tr>
     </tbody>
